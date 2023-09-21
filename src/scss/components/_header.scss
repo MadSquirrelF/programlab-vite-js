@@ -1,0 +1,123 @@
+.header {
+  $this: &;
+
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: $layer-header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  width: 100%;
+  background-color: $color-bg;
+
+  &__logo {
+    margin-right: 8px;
+  }
+
+  &__input-container {
+    position: relative;
+    border-radius: 24px;
+    padding: 6px 12px 6px 48px;
+    width: 100%;
+    height: $input-menu-height;
+    max-width: 224px;
+    background-color: $color-white;
+    transition: all $default-transition ease-in-out;
+
+    &.active {
+      border-radius: 24px 24px 0 0;
+    }
+  }
+
+  &__search-box {
+    position: relative;
+  }
+
+  &__result-box {
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    border-radius: 0 0 24px 24px;
+    width: 100%;
+    background-color:#fff;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform $default-transition ease-in-out ;
+
+    &.active {
+      transform: scaleY(1);
+    }
+  }
+
+  &__result-item {
+    display: block;
+    padding: 10px 15px 10px 48px;
+    cursor: pointer;
+
+    span {
+      color: $primary-color-default;
+    }
+
+    &:hover {
+      background-color: $primary-color-bg;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__search-input {
+    width: 100%;
+    height: 100%;
+    color: $color-black;
+    caret-color: $primary-color-default;
+
+    &::placeholder {
+      color: $color-medium-grey;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+
+  &__search-icon {
+    @include icon(18px,18px,$color-dark-grey);
+  }
+  
+  &__notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    
+    &:hover {
+      #{$this}__bell-icon {
+        @include icon(24px,24px,$primary-color-hover);
+      }
+    }
+
+    &:active {
+      #{$this}__bell-icon {
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  &__bell-icon {
+    @include icon(24px,24px,$primary-color-default);
+  }
+}

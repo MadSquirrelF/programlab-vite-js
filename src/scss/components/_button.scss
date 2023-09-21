@@ -1,0 +1,33 @@
+.button {
+  $this: &;
+
+  @include reset-button;
+
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background-color: transparent;
+  transition: all $default-transition;
+
+  &--default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    padding: 14px 35px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.2;
+    color: $color-white;
+    background-color: $primary-color-default;
+
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}

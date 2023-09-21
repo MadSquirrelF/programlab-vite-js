@@ -1,0 +1,90 @@
+@font-face {
+  src: url("/fonts/Stem-Medium.eot");
+  src: local("/fonts/Stem Medium"), local("/fonts/Stem-Medium"),
+    url("/fonts/Stem-Medium.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Stem-Medium.woff2") format("woff2"),
+    url("/fonts/Stem-Medium.woff") format("woff"),
+    url("/fonts/Stem-Medium.ttf") format("truetype");
+  font-family: Stem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  src: url("/fonts/Stem-SemiLight.eot");
+  src: local("/fonts/Stem Semi Light"), local("/fonts/Stem-SemiLight"),
+    url("/fonts/Stem-SemiLight.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Stem-SemiLight.woff2") format("woff2"),
+    url("/fonts/Stem-SemiLight.woff") format("woff"),
+    url("/fonts/Stem-SemiLight.ttf") format("truetype");
+  font-family: Stem;
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Stem, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 360px;
+  color: $color-black;
+  background-color: $color-dark-grey;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+span,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $color-black;
+}
+
+p {
+  color: $color-dark-grey;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+input {
+  all: unset;
+}
+
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: $primary-color-default;
+}
+ 

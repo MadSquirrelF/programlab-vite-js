@@ -1,0 +1,254 @@
+@import "./variables.scss";
+@import "./mixins";
+@import "./libs/normalize.scss";
+@import "./components/all.scss";
+
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $color-bg;
+}
+
+.projects {
+  $this: &;
+
+  padding: 8px 0 8px 16px;
+
+  &__title {
+    line-height: 20px;
+  }
+
+  &__carusel {
+    display: grid;
+    overflow-x: auto;
+    gap: 12px;
+    grid-auto-columns: 3;
+    grid-auto-flow: column;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.no-transititon {
+      scroll-behavior: auto;
+    }
+
+    &.dragging {
+      scroll-behavior: auto;
+      scroll-snap-type: none;
+      #{$this}__card {
+        @include noselect;
+
+        cursor: grab;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-top: 12px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 6px;
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(127.57deg, rgb(43 58 76 / 83%) 12.5%, rgb(4 182 245 / 63%) 106.03%);
+    aspect-ratio: 8 / 5;
+    scroll-snap-align: start;
+  }
+
+  &__card-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__image-blur {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(128deg, rgb(43 58 76 / 83%) 12.5%, rgb(4 182 245 / 63%) 106.03%);
+  }
+
+  &__description {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  &__subtitle,
+  &__description {
+    color: $color-white;
+  }
+}
+
+.contacts {
+  padding: 16px;
+
+  &__wrapper {
+    outline: 2px solid $primary-color-border;
+    border-radius: 16px;
+    padding: 24px;
+    background-color: $primary-color-bg;
+  }
+
+  &__img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    min-width: 100%;
+    aspect-ratio: 8 / 5;
+  }
+
+  &__title {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: $color-black;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  
+  &__btn {
+    width: 100%;
+  }
+}
+
+.services {
+  padding: 16px;
+  
+  &__title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__wrapper {
+    display: grid;
+    align-items: center;
+    margin-top: 12px;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__box {
+    border-radius: 16px;
+    padding: 12px;
+    height: 100%;
+    background-color: $color-white;
+  }
+
+  &__description {
+    margin-top: 4px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+
+.news {
+  padding: 16px 12px;
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__link {
+    color: $primary-color-default;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    align-items: start;
+    border-radius: 16px;
+    padding: 12px;
+    width: 100%;
+    background-color: $color-white;
+  }
+
+  &__image-container {
+    position: relative;
+    flex: none;
+    overflow: hidden;
+    margin-right: 8px;
+    border-radius: 6px;
+    width: 90px;
+    height: 90px;
+    aspect-ratio: 1;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  &__date {
+    font-size: 10px;
+    line-height: 1.2;
+    color: $color-dark-grey;
+  }
+
+  &__subtitle {
+    line-height: 20px;
+  }
+
+}

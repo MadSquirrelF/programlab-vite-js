@@ -1,0 +1,27 @@
+// Layout variables
+$side-paddings-mobile: 24px;
+$side-paddings-desktop: 32px;
+
+// need to approve the following two figures with the designer
+$top-menu-height: 56px;
+$input-menu-height: 36px;
+$container-max-width: 1200px;
+
+// Color variables
+$color-black: #06040e;
+$color-white: #fff;
+$color-dark-grey: #7a7a7a;
+$color-medium-grey: #b4b4b4;
+$primary-color-default: #04B6F5;
+$primary-color-hover: #87dcfa;
+$primary-color-border: #c2ebfa;
+$primary-color-bg: #e6f5fb;
+$color-red: #ff3b30;
+$color-bg: #fafafb;
+
+// Z-index variables
+$layer-header: 100;
+$layer-popup: 50;
+
+// Animation variables
+$default-transition: 0.3s ease-in-out;

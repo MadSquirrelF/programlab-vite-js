@@ -1,0 +1,85 @@
+.nav {
+  $this: &;
+
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  z-index: $layer-header;
+  width: 100%;
+  background-color: $color-white;
+
+  &__list {
+    @include reset-list;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  
+  &__count-container {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: $color-red;
+  }
+
+  &__count {
+    font-size: 10px;
+    line-height: 1.2;
+    color: $color-white;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+
+    &:hover {
+      #{$this}__icon {
+        @include icon(24px,24px,$primary-color-default);
+      }
+
+      #{$this}__title {
+        color: $primary-color-default;
+      }
+    }
+
+    &:first-child {
+      padding-left: 12px;
+    }
+
+    &:last-child {
+      padding-right: 12px;
+    }
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.33;
+    color: $color-dark-grey;
+  }
+
+  &__icon {
+    @include icon(24px,24px,$color-dark-grey);
+
+    margin: 0 auto;
+  }
+}

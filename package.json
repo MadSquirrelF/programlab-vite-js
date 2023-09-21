@@ -1,0 +1,22 @@
+{
+  "name": "programlab-vite-js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.67.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.2.1",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.8"
+  }
+}
